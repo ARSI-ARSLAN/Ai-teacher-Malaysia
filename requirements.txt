@@ -1,24 +1,22 @@
 # AI Teacher Malaysia - RAG System Dependencies
+# NOTE: easyocr removed — only needed for local PDF ingestion, not runtime
 
 # Web Framework
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
 python-multipart==0.0.20
 
-# PDF Processing
+# PDF Processing (kept for /api/ingest endpoint compatibility)
 pymupdf==1.25.3
 pdfplumber==0.11.4
 Pillow==11.1.0
-
-# OCR
-easyocr==1.7.2
 
 # Text Splitting & LangChain
 langchain
 langchain-text-splitters
 langchain-community
 
-# Embeddings
+# Embeddings (needed at runtime for query embedding)
 sentence-transformers==3.4.1
 torch==2.9.0
 transformers==4.49.0
@@ -35,3 +33,6 @@ httpx==0.28.1
 numpy==2.2.3
 tqdm==4.67.1
 langdetect==1.0.9
+
+# Pin python-bidi to old pure-Python version (new version requires Rust build)
+python-bidi==0.4.2
