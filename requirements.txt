@@ -1,0 +1,37 @@
+# AI Teacher Malaysia - RAG System Dependencies
+
+# Web Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# PDF Processing
+pymupdf==1.25.3
+pdfplumber==0.11.4
+Pillow==11.1.0
+
+# OCR
+easyocr==1.7.2
+
+# Text Splitting & LangChain
+langchain
+langchain-text-splitters
+langchain-community
+
+# Embeddings
+sentence-transformers==3.4.1
+torch==2.6.0
+transformers==4.49.0
+
+# Vector Database (Zilliz Cloud / Milvus)
+pymilvus==2.6.9
+
+# LLM - Groq API (fast LPU inference)
+groq==1.1.1
+
+# Utilities
+python-dotenv==1.0.1
+httpx==0.28.1
+numpy==2.2.3
+tqdm==4.67.1
+langdetect==1.0.9
