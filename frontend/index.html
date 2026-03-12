@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Guru Matematik | Malaysia KSSM</title>
+  <meta name="description" content="AI Math Teacher for Malaysian KSSM Syllabus - Soal Jawab Matematik AI" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- App Shell -->
+  <div class="app-container">
+
+    <!-- ── Header ─────────────────────────────── -->
+    <header class="glass-header">
+      <div class="header-inner">
+        <div class="logo-group">
+          <div class="logo-icon">🎓</div>
+          <div class="logo-text">
+            <h1 id="app-title">AI Guru Matematik</h1>
+            <p id="app-subtitle">Sistem Pengajaran Berteraskan KSSM</p>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <!-- Form Level Selector -->
+          <div class="select-wrapper">
+            <select id="form-select" title="Select Form Level">
+              <option value="">All Forms</option>
+              <option value="T1">Form 1 (T1)</option>
+              <option value="T2">Form 2 (T2)</option>
+              <option value="T3">Form 3 (T3)</option>
+              <option value="T4">Form 4 (T4)</option>
+              <option value="T5">Form 5 (T5)</option>
+            </select>
+          </div>
+
+          <!-- Language Toggle -->
+          <div class="lang-toggle" id="lang-toggle" title="Switch Language">
+            <span class="lang-option active" id="lang-bm">BM</span>
+            <div class="lang-divider"></div>
+            <span class="lang-option" id="lang-en">EN</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Bar -->
+      <div class="status-bar">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">Connecting...</span>
+        <span class="kssm-badge">📚 KSSM Syllabus • Tingkatan 1–5</span>
+      </div>
+    </header>
+
+    <!-- ── Chat Window ─────────────────────────── -->
+    <main class="chat-window" id="chat-window">
+      <!-- Welcome Message -->
+      <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-icon">🤖</div>
+        <h2 id="welcome-title">Selamat Datang!</h2>
+        <p id="welcome-desc">Saya ialah AI Guru Matematik anda. Tanya saya apa sahaja tentang Matematik KSSM Tingkatan 1–5.</p>
+        <div class="sample-questions" id="sample-questions">
+          <button class="sample-btn" onclick="useQuestion(this)">Apakah Teorem Pythagoras?</button>
+          <button class="sample-btn" onclick="useQuestion(this)">Selesaikan: 2x + 5 = 13</button>
+          <button class="sample-btn" onclick="useQuestion(this)">What is quadratic formula?</button>
+          <button class="sample-btn" onclick="useQuestion(this)">Kirakan luas segi tiga dengan tapak 6cm dan tinggi 8cm</button>
+        </div>
+      </div>
+
+      <!-- Messages will be injected here -->
+      <div id="messages"></div>
+
+      <!-- Typing Indicator -->
+      <div class="typing-indicator hidden" id="typing-indicator">
+        <div class="typing-avatar">🤖</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </main>
+
+    <!-- ── Input Area ──────────────────────────── -->
+    <footer class="input-area glass-footer">
+      <div class="input-wrapper">
+        <textarea
+          id="question-input"
+          placeholder="Taip soalan matematik anda di sini... / Type your math question here..."
+          rows="1"
+          maxlength="2000"
+        ></textarea>
+        <div class="input-actions">
+          <span class="char-count" id="char-count">0/2000</span>
+          <button class="send-btn" id="send-btn" title="Send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <p class="footer-note" id="footer-note">AI ini berdasarkan buku teks KSSM • Jawapan mungkin tidak sempurna</p>
+    </footer>
+
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
